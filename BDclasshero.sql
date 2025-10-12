@@ -1,11 +1,6 @@
--- Criação da tabela funcionarios
-CREATE TABLE funcionarios (
-    id INT PRIMARY KEY,
-    nome VARCHAR(100),
-    cargo VARCHAR(50),
-    salario DECIMAL(10, 2)
-);
-
--- Alteração para adicionar a coluna data_nascimento
-ALTER TABLE funcionarios
-ADD COLUMN data_nascimento DATE;
+SELECT 
+    funcionario_id,
+    nome,
+    MOD(ROW_NUMBER() OVER (ORDER BY funcionario_id) - 1, 4) + 1 AS equipe
+FROM 
+    funcionarios;

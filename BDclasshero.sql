@@ -1,2 +1,2 @@
-ALTER TABLE Produto
-ADD CONSTRAINT uq_codigo UNIQUE (codigo);
+ALTER TABLE Pedido
+MODIFY (valor_total NUMBER(15,2));
